@@ -1,0 +1,41 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
+ApplicationCable	app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
+Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+hello	app/controllers/application_controller.rb	/^  def hello$/;"	f	class:ApplicationController
+StaticPagesController	app/controllers/static_pages_controller.rb	/^class StaticPagesController < ApplicationController$/;"	c
+about	app/controllers/static_pages_controller.rb	/^  def about$/;"	f	class:StaticPagesController
+contact	app/controllers/static_pages_controller.rb	/^  def contact$/;"	f	class:StaticPagesController
+help	app/controllers/static_pages_controller.rb	/^  def help$/;"	f	class:StaticPagesController
+home	app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
+UsersController	app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+new	app/controllers/users_controller.rb	/^  def new$/;"	f	class:UsersController
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+full_title	app/helpers/application_helper.rb	/^	def full_title page_title = ''$/;"	f	class:ApplicationHelper
+StaticPagesHelper	app/helpers/static_pages_helper.rb	/^module StaticPagesHelper$/;"	m
+UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+User	app/models/user.rb	/^class User < ApplicationRecord$/;"	c
+system!	bin/setup	/^def system!(*args)$/;"	f
+system!	bin/update	/^def system!(*args)$/;"	f
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:NewApp
+NewApp	config/application.rb	/^module NewApp$/;"	m
+CreateUsers	db/migrate/20171129162647_create_users.rb	/^class CreateUsers < ActiveRecord::Migration[5.1]$/;"	c
+change	db/migrate/20171129162647_create_users.rb	/^  def change$/;"	f	class:CreateUsers
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+ApplicationSystemTestCase	test/application_system_test_case.rb	/^class ApplicationSystemTestCase < ActionDispatch::SystemTestCase$/;"	c
+StaticPagesControllerTest	test/controllers/static_pages_controller_test.rb	/^class StaticPagesControllerTest < ActionDispatch::IntegrationTest$/;"	c
+setup	test/controllers/static_pages_controller_test.rb	/^	def setup$/;"	f	class:StaticPagesControllerTest
+UsersControllerTest	test/controllers/users_controller_test.rb	/^class UsersControllerTest < ActionDispatch::IntegrationTest$/;"	c
+ApplicationHelperTest	test/helpers/application_helper_test.rb	/^class ApplicationHelperTest < ActionView::TestCase$/;"	c
+SiteLayoutTest	test/integration/site_layout_test.rb	/^class SiteLayoutTest < ActionDispatch::IntegrationTest$/;"	c
+UserTest	test/models/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
