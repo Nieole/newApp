@@ -10,7 +10,9 @@ class UsersController < ApplicationController
     @user=User.new(user_params)
     # debugger
     if @user.save
-
+      flash[:success]="Welcome to the Sample App!"
+      redirect_to @user
+      # redirect_to user_url(@user)
     else
       render 'new'
     end
