@@ -11,6 +11,8 @@ class SessionsController < ApplicationController
     if user&&user.authenticate(params[:session][:password])
       #调用sessions_helper定义的log_in方法将user的id存入session
       log_in user
+      #调用sessions_helper定义的remember方法
+      remember user
       #跳转到UsersController的show方法并传入user对象参数
       redirect_to user
     else
@@ -22,8 +24,8 @@ class SessionsController < ApplicationController
   end
   #注销方法
   def destroy
-    #调用sessions_helper定义的log_out方法将session中的user_id删除
-    log_out
+    #判断当用户登录后调用sessions_helper定义的log_out方法将session中的user_id删除
+    log_out if logged_in?
     #页面跳转到根路径
     redirect_to root_path
   end

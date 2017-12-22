@@ -18,6 +18,7 @@ class User < ApplicationRecord
 		end
 		#生成一个新的令牌
 		def new_token
+			#返回长度为22的随机字符串
 			SecureRandom.urlsafe_base64
 		end
 	end
@@ -28,5 +29,15 @@ class User < ApplicationRecord
 		self.remember_token=User::new_token
 		#更新DB中的密码摘要字段
 		update_attribute(:remember_digest,User.digest(remember_token))
+	end
+	#如果指定的令牌和摘要匹配，反回true
+	def authenticated? remember_token
+		#当remember_digest为空时返回false
+		return false if remember_digest.nil?
+		BCrypt::Password.new(remember_digest).is_password?(remember_token)
+	end
+	#忘记用户
+	def forget
+		update_attribute(:remember_digest,nil)
 	end
 end
