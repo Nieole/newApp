@@ -9,6 +9,7 @@ class User < ApplicationRecord
 	has_secure_password
 	#验证password非空、最小长度为6
 	validates :password, presence: true, length: { minimum: 6 }
+	#定义一个匿名类继承User
 	class << self
 		# 返回指定字符串的哈希摘要
 		def digest string
@@ -25,7 +26,7 @@ class User < ApplicationRecord
 	def remember
 		#对remember_token属性进行赋值
 		self.remember_token=User::new_token
-		#跟新DB中的密码摘要字段
+		#更新DB中的密码摘要字段
 		update_attribute(:remember_digest,User.digest(remember_token))
 	end
 end
