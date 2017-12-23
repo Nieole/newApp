@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   #指定在调用edit和update方法之前先调用logged_in_user和correct_user方法
-  before_action :logged_in_user,only:[:edit,:update]
+  before_action :logged_in_user,only:[:edit,:update,:index,:destroy]
   before_action :correct_user,only:[:edit,:update]
+  before_action :admin_user,only: :destroy
+  #获取所有用户列表页
+  def index
+    @users=User.paginate page:params[:page]
+  end
   #获取user注册页面
   def new
     @user=User.new
@@ -15,9 +20,12 @@ class UsersController < ApplicationController
   def create
     #通过页面表单传入参数新增user
     @user=User.new(user_params)
-    # debugger
     #判断@user保存是否成功
     if @user.save
+      #将所有注册用户email放入redis的users集合中
+      $redis.sadd(:users,@user.email)
+      #将用户注册信息放入redis
+      $redis.hmset("user-#{@user.email}",:name,@user.name,:email,@user.email,:password_digest,@user.password_digest)
       #保存成功时调用调用sessions_helper定义的log_in方法将user的id存入session
       log_in @user
       #将注册成功消息放入flash供页面展示
@@ -44,6 +52,12 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+  #删除用户信息方法
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success]="User deleted"
+    redirect_to users_url
+  end
   private
   def user_params
     params.require(:user).permit(:name,:email,:password,:password_confirmation)
@@ -62,5 +76,9 @@ class UsersController < ApplicationController
   def correct_user
     @user=User.find(params[:id])
     redirect_to root_url unless current_user? @user
+  end
+  #确保当前用户是否为admin
+  def admin_user
+    redirect_to root_url unless current_user.admin?
   end
 end
