@@ -14,7 +14,9 @@ class SessionsController < ApplicationController
       #通过页面选择的是否保存user信息调用sessions_helper定义的remember方法或者是forget方法
       params[:session][:remember_me]=='1' ? remember(@user) : forget(@user)
       #跳转到UsersController的show方法并传入user对象参数
-      redirect_to @user
+      # redirect_to @user
+      #调用SessionsHelper中定义的redirect_back_or方法跳转到session中储存的用户请求的页面或者默认页面
+      redirect_back_or @user
     else
       #当用户信息验证不通过时放入一个单次有效的提示信息到flash里供页面展示
       flash.now[:danger]="Invalid email/password combination"

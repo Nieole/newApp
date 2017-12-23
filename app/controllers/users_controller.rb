@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  #指定在调用edit和update方法之前先调用logged_in_user和correct_user方法
+  before_action :logged_in_user,only:[:edit,:update]
+  before_action :correct_user,only:[:edit,:update]
   #获取user注册页面
   def new
     @user=User.new
@@ -29,11 +32,9 @@ class UsersController < ApplicationController
   end
   #用户编辑自己信息
   def edit
-    @user=User.find(params[:id])
   end
   #更新用户信息方法
   def update
-    @user=User.find(params[:id])
     if @user.update_attributes(user_params)
       #处理更新成功的情况
       flash[:success]="Profile updated"
@@ -46,5 +47,20 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name,:email,:password,:password_confirmation)
+  end
+  #前置过滤器
+  #确保用户已登录
+  def logged_in_user
+    unless logged_in?
+      #将请求地址存入session
+      store_location
+      flash[:danger]="Please log in."
+      redirect_to login_url
+    end
+  end
+  #确保是正确的用户
+  def correct_user
+    @user=User.find(params[:id])
+    redirect_to root_url unless current_user? @user
   end
 end
