@@ -27,6 +27,22 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  #用户编辑自己信息
+  def edit
+    @user=User.find(params[:id])
+  end
+  #更新用户信息方法
+  def update
+    @user=User.find(params[:id])
+    if @user.update_attributes(user_params)
+      #处理更新成功的情况
+      flash[:success]="Profile updated"
+      redirect_to @user
+    else
+      #更新失败则跳转到编辑方法
+      render 'edit'
+    end
+  end
   private
   def user_params
     params.require(:user).permit(:name,:email,:password,:password_confirmation)

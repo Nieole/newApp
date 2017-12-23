@@ -8,7 +8,7 @@ class User < ApplicationRecord
 	validates :email, presence: true,length: {maximum: 255}, format: { with: VALID_EMAIL_REGEX },uniqueness: { case_sensitive: false }
 	has_secure_password
 	#验证password非空、最小长度为6
-	validates :password, presence: true, length: { minimum: 6 }
+	validates :password, presence: true, length: { minimum: 6 },allow_nil:true
 	#定义一个匿名类继承User
 	class << self
 		# 返回指定字符串的哈希摘要
