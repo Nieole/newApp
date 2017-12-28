@@ -23,16 +23,21 @@ class UsersController < ApplicationController
     #判断@user保存是否成功
     if @user.save
       #将所有注册用户email放入redis的users集合中
-      $redis.sadd(:users,@user.email)
+      # $redis.sadd(:users,@user.email)
       #将用户注册信息放入redis
-      $redis.hmset("user-#{@user.email}",:name,@user.name,:email,@user.email,:password_digest,@user.password_digest)
+      # $redis.hmset("user-#{@user.email}",:name,@user.name,:email,@user.email,:password_digest,@user.password_digest)
       #保存成功时调用调用sessions_helper定义的log_in方法将user的id存入session
-      log_in @user
+      # log_in @user
       #将注册成功消息放入flash供页面展示
-      flash[:success]="Welcome to the Sample App!"
+      # flash[:success]="Welcome to the Sample App!"
       #页面跳转到user_url并带入@user参数
-      redirect_to @user
+      # redirect_to @user
       # redirect_to user_url(@user)
+
+      #注册成功后跳转到首页并发送验证邮箱
+      UserMailer.account_activation(@user).deliver_now
+      flash[:info]="Please check your email to activate your account."
+      redirect_to root_url
     else
       #当保存失败时重定向到new方法获取user注册页面
       render 'new'

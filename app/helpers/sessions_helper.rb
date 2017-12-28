@@ -14,7 +14,7 @@ module SessionsHelper
     elsif user_id=cookies.signed[:user_id]
       user=User.find_by(id:user_id)
       #如果查到相关user信息并且cookies中的令牌与摘要匹配
-      if user&&user.authenticated?(cookies[:remember_token])
+      if user&&user.authenticated?(:remember,cookies[:remember_token])
         #调用SessionsHelper中的log_in方法
         log_in user
         #将查询到的user信息赋值给@current_user

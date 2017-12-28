@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-	attr_accessor :remember_token#令牌摘要
-	before_save { email.downcase! }#将email转换为小写
+	attr_accessor :remember_token,:activation_token#令牌摘要
+	before_save :downcase_email#将email转换为小写
+	before_create :create_activation_digest# 创建并赋值激活令牌和摘要
 	#验证name非空、最大长度为50
 	validates :name, presence: true,length: {maximum: 50}
 	#通过正则表达式验证email的合法性、非空、最大长度为255
@@ -31,13 +32,24 @@ class User < ApplicationRecord
 		update_attribute(:remember_digest,User.digest(remember_token))
 	end
 	#如果指定的令牌和摘要匹配，反回true
-	def authenticated? remember_token
-		#当remember_digest为空时返回false
-		return false if remember_digest.nil?
-		BCrypt::Password.new(remember_digest).is_password?(remember_token)
+	def authenticated? attribute,token
+		digest=send "#{attribute}_digest"
+		#当digest为空时返回false
+		return false if digest.nil?
+		BCrypt::Password.new(digest).is_password?(token)
 	end
 	#忘记用户
 	def forget
 		update_attribute(:remember_digest,nil)
 	end
+	private
+	# 把电子邮件地址转换成小写
+  def downcase_email
+    email.downcase!
+  end
+	# 创建并赋值激活令牌和摘要
+  def create_activation_digest
+    self.activation_token  = User.new_token
+    self.activation_digest = User.digest(activation_token)
+  end
 end

@@ -9,6 +9,17 @@ class SessionsController < ApplicationController
     # debugger
     # 如果找到了user信息并且密码比对通过
     if @user&&@user.authenticate(params[:session][:password])
+      #判断用户是否激活
+      if user.activated?
+        log_in user
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        redirect_back_or user
+      else
+        message  = "Account not activated. "
+        message += "Check your email for the activation link."
+        flash[:warning] = message
+        redirect_to root_url
+      end
       #调用sessions_helper定义的log_in方法将user的id存入session
       log_in @user
       #通过页面选择的是否保存user信息调用sessions_helper定义的remember方法或者是forget方法
