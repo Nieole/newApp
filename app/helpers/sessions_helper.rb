@@ -57,7 +57,7 @@ module SessionsHelper
   end
   #重定向到储存的地址或默认地址
   def redirect_back_or default
-    redirect_to (session[:forwarding_url]||default)
+    redirect_to(session[:forwarding_url]||default)
     session.delete(:forwarding_url)
   end
   #储存后面需要使用的地址
