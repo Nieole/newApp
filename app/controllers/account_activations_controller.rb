@@ -5,9 +5,10 @@ class AccountActivationsController < ApplicationController
     #如果用户存在并且用户没有被激活且token正确
     if user&&!user.activated?&&user.authenticated?(:activation,params[:id])
       #更新用户激活状态
-      user.update_attribute(:activated,true)
+      # user.update_attribute(:activated,true)
       #更新用户激活时间
-      user.update_attribute(:activated_at,Time.now)
+      # user.update_attribute(:activated_at,Time.now)
+      user.activate
       log_in user
       flash[:success]="Account activated!"
       redirect_to user

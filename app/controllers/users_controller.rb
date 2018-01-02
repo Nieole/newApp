@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   before_action :admin_user,only: :destroy
   #获取所有用户列表页
   def index
-    @users=User.paginate page:params[:page]
+    # @users=User.paginate page:params[:page]
+    @users=User.where(activated:true).paginate(page:params[:page])
   end
   #获取user注册页面
   def new
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
   def show
   	@user=User.find(params[:id])
   	# debugger
+    redirect_to root_url and return unless @user
   end
   #注册user方法
   def create
@@ -35,7 +37,8 @@ class UsersController < ApplicationController
       # redirect_to user_url(@user)
 
       #注册成功后跳转到首页并发送验证邮箱
-      UserMailer.account_activation(@user).deliver_now
+      # UserMailer.account_activation(@user).deliver_now
+      @user.send_activation_email
       flash[:info]="Please check your email to activate your account."
       redirect_to root_url
     else

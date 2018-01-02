@@ -42,6 +42,16 @@ class User < ApplicationRecord
 	def forget
 		update_attribute(:remember_digest,nil)
 	end
+	#激活账户
+	def activate
+		update_columns(activated:true,activated_at:Time.now)
+		# update_attribute(:activated,true)
+		# update_attribute(:activated_at,Time.now)
+	end
+	#发送激活邮件
+	def send_activation_email
+		UserMailer.account_activation(self).deliver_now
+	end
 	private
 	# 把电子邮件地址转换成小写
   def downcase_email

@@ -11,8 +11,13 @@ class SessionsController < ApplicationController
     if @user&&@user.authenticate(params[:session][:password])
       #判断用户是否激活
       if @user.activated?
+        #调用sessions_helper定义的log_in方法将user的id存入session
         log_in @user
-        params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
+        #通过页面选择的是否保存user信息调用sessions_helper定义的remember方法或者是forget方法
+        params[:session][:remember_me]=='1' ? remember(@user) : forget(@user)
+        #跳转到UsersController的show方法并传入user对象参数
+        # redirect_to @user
+        #调用SessionsHelper中定义的redirect_back_or方法跳转到session中储存的用户请求的页面或者默认页面
         redirect_back_or @user
       else
         message  = "Account not activated. "
@@ -20,14 +25,6 @@ class SessionsController < ApplicationController
         flash[:warning] = message
         redirect_to root_url
       end
-      #调用sessions_helper定义的log_in方法将user的id存入session
-      log_in @user
-      #通过页面选择的是否保存user信息调用sessions_helper定义的remember方法或者是forget方法
-      params[:session][:remember_me]=='1' ? remember(@user) : forget(@user)
-      #跳转到UsersController的show方法并传入user对象参数
-      # redirect_to @user
-      #调用SessionsHelper中定义的redirect_back_or方法跳转到session中储存的用户请求的页面或者默认页面
-      redirect_back_or @user
     else
       #当用户信息验证不通过时放入一个单次有效的提示信息到flash里供页面展示
       flash.now[:danger]="Invalid email/password combination"
