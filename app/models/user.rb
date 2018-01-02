@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	attr_accessor :remember_token,:activation_token#令牌摘要
+	attr_accessor :remember_token,:activation_token,:reset_token#令牌摘要
 	before_save :downcase_email#将email转换为小写
 	before_create :create_activation_digest# 创建并赋值激活令牌和摘要
 	#验证name非空、最大长度为50
@@ -51,6 +51,15 @@ class User < ApplicationRecord
 	#发送激活邮件
 	def send_activation_email
 		UserMailer.account_activation(self).deliver_now
+	end
+	#设置密码重设相关的属性
+	def create_reset_digest
+		self.reset_token=User.new_token
+		update_columns(reset_digest:User.digest(reset_token),reset_sent_at:Time.now)
+	end
+	#发送密码重设邮件
+	def send_password_reset_email
+		UserMailer.password_reset(self).deliver_now
 	end
 	private
 	# 把电子邮件地址转换成小写
