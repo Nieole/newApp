@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	has_many :microposts
 	attr_accessor :remember_token,:activation_token,:reset_token#令牌摘要
 	before_save :downcase_email#将email转换为小写
 	before_create :create_activation_digest# 创建并赋值激活令牌和摘要
