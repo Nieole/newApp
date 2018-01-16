@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   #获取展示user信息页面
   def show
   	@user=User.find(params[:id])
+    @microposts=@user.microposts.paginate(page:params[:page])
   	# debugger
     redirect_to root_url and return unless @user
   end
