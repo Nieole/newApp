@@ -68,6 +68,10 @@ class User < ApplicationRecord
 		#判断密码重设邮件是否已经发出超过两小时
 		reset_sent_at < 2.hours.ago
 	end
+	#实现动态流原型
+	def feed
+		Micropost.where("user_id=?",id)
+	end
 	private
 	# 把电子邮件地址转换成小写
   def downcase_email
