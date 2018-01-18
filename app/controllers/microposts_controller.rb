@@ -14,13 +14,15 @@ class MicropostsController < ApplicationController
   def destroy
     @micropost.destroy
     flash[:success]="Micropost deleted"
-    redirect_to request.referrer || root_url
+    # redirect_to request.referrer || root_url
+    # rails5新增方法
+    redirect_back(fallback_location:root_url)
   end
 
   private
   #健壮参数
   def micropost_params
-    params.require(:micropost).permit(:content)
+    params.require(:micropost).permit(:content,:picture)
   end
   def correct_user
     @micropost=current_user.microposts.find_by(id:params[:id])

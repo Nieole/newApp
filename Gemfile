@@ -36,6 +36,10 @@ gem 'jquery-rails', '4.3.1'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'carrierwave',             '1.1.0'
+gem 'mini_magick',             '4.7.0'
+gem 'fog-aws',                 '2.0.0'
+gem 'nokogiri',                '1.8.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
