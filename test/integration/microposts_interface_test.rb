@@ -48,6 +48,6 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_match "0 microposts",response.body
     other_user.microposts.create!(content:"A micropost")
     get root_url
-    # assert_match "Micropost Feed".response.body
+    # assert_match "micropost".response.body
   end
 end
