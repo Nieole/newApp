@@ -1,6 +1,9 @@
 class User < ApplicationRecord
 	#指定对microposts模型为一对多关系，当用户被删除的时候，把对应的microposts连同删除
 	has_many :microposts,dependent: :destroy
+	has_many :active_relationships,class_name:"Relationship",foreign_key:"follower_id",dependent: :destroy
+	#使用 source 参数指定 following 数组由 followed_id 组成
+	has_many :following,through: :active_relationships,source: :followed
 	attr_accessor :remember_token,:activation_token,:reset_token#令牌摘要
 	before_save :downcase_email#将email转换为小写
 	before_create :create_activation_digest# 创建并赋值激活令牌和摘要
@@ -71,6 +74,18 @@ class User < ApplicationRecord
 	#实现动态流原型
 	def feed
 		Micropost.where("user_id=?",id)
+	end
+	#关注另一个用户
+	def follow other_user
+		following << other_user
+	end
+	#取消关注另一个用户
+	def unfollow other_user
+		following.delete other_user
+	end
+	#如果当前用户关注了指定的用户，返回true
+	def following? other_user
+		following.include?(other_user)
 	end
 	private
 	# 把电子邮件地址转换成小写
