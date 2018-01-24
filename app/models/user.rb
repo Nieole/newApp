@@ -2,8 +2,11 @@ class User < ApplicationRecord
 	#指定对microposts模型为一对多关系，当用户被删除的时候，把对应的microposts连同删除
 	has_many :microposts,dependent: :destroy
 	has_many :active_relationships,class_name:"Relationship",foreign_key:"follower_id",dependent: :destroy
+	has_many :passive_relationships,class_name: "Relationship",foreign_key:"followed_id",dependent: :destroy
 	#使用 source 参数指定 following 数组由 followed_id 组成
 	has_many :following,through: :active_relationships,source: :followed
+	# has_many :followers,through: :passive_relationships,source: :follower
+	has_many :followers,through: :passive_relationships
 	attr_accessor :remember_token,:activation_token,:reset_token#令牌摘要
 	before_save :downcase_email#将email转换为小写
 	before_create :create_activation_digest# 创建并赋值激活令牌和摘要
