@@ -16,5 +16,6 @@ module NewApp
     # -- all .rb files in that directory are automatically loaded.
     # 在使用 Ajax 处理的表单中添加真伪令牌
     config.action_view.embed_authenticity_token_in_remote_forms = true
+    # config.active_job.queue_adapter = :sidekiq
   end
 end
