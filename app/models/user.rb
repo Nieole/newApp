@@ -78,7 +78,10 @@ class User < ApplicationRecord
 	def feed
 		# Micropost.where("user_id=?",id)
 		# following_ids等价于user.following.map { |i| i.to_s }
-		Micropost.where("user_id in (?) or user_id = ?",following_ids,id)
+		# Micropost.where("user_id in (?) or user_id = ?",following_ids,id)
+		# Micropost.where("User_id in (:following_ids) or user_id = :user_id",following_ids:following_ids,user_id:id)
+		following_ids="select followed_id from relationships where follower_id = :user_id"
+		Micropost.where("user_id in (#{following_ids}) or user_id = :user_id",user_id:id)
 	end
 	#关注另一个用户
 	def follow other_user
