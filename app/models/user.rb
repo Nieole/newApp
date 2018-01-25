@@ -76,7 +76,9 @@ class User < ApplicationRecord
 	end
 	#实现动态流原型
 	def feed
-		Micropost.where("user_id=?",id)
+		# Micropost.where("user_id=?",id)
+		# following_ids等价于user.following.map { |i| i.to_s }
+		Micropost.where("user_id in (?) or user_id = ?",following_ids,id)
 	end
 	#关注另一个用户
 	def follow other_user
