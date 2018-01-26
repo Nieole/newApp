@@ -42,6 +42,8 @@ gem 'fog-aws',                 '2.0.0'
 gem 'nokogiri',                '1.8.1'
 gem 'sidetiq'
 gem 'sidekiq'
+gem 'rufus-scheduler'
+gem 'kaminari'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
