@@ -1,0 +1,173 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nnoremap <buffer> <silent> <NL> :call exproject#cursor_jump( '\C\[F\]', 'down' )
+nnoremap <buffer> <silent>  :call exproject#cursor_jump( '\C\[F\]', 'up' )
+nnoremap <buffer> <silent>  :call exproject#confirm_select('')
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
+nnoremap <buffer> <silent>   :call exproject#toggle_zoom()
+nnoremap <buffer> <silent> O :call exproject#newfolder()
+nnoremap <buffer> <silent> \r :EXProjectRefresh
+nnoremap <buffer> <silent> \R :EXProjectBuild
+nmap <buffer> gf <Plug>RailsFind
+nnoremap <buffer> <silent> o :call exproject#newfile()
+nnoremap <buffer> <silent> <C-Tab> :call EXProjectToNERDTree()
+nnoremap <buffer> <silent> <S-2-LeftMouse> :call exproject#confirm_select('shift')
+nnoremap <buffer> <silent> <S-CR> :call exproject#confirm_select('shift')
+nnoremap <buffer> <silent> <2-LeftMouse> :call exproject#confirm_select('')
+nnoremap <buffer> <silent> <F1> :call exproject#toggle_help()
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=hide
+setlocal nobuflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=>s,e0,n0,f0,{0,}0,^0,:0,=s,l0,b0,g0,hs,ps,ts,is,+s,c3,C0,0,(0,us,U0,w0,W0,m0,j0,)20,*30
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=%\\S%\\+\ \ %#%[cefi]%[rxod]%[eir]%[a-z]%#%\\x1b[0m\ %\\+%\\S%\\+%$%\\&%\\x1b%\\S%\\+\ \ %#%m%\\>%\\x1b[0m\ \ %#%f,%\\s\ %#%[cefi]%[rxod]%[eir]%[a-z]%#\ %\\+%\\S%\\+%$%\\&%\\s\ %#%m%\\>\ \ %#%f,Overwrite%.%#%\\S%\\+\ \ %#%m%\\x1b[0m\ \ %#%f,%-GOverwrite%.%#\"h\"%.%#,%+GCurrent\ version:%.%#,%+G\ %#Status\ %#Migration\ ID%.%#,%+G\ %#Prefix\ %#Verb%.%#,%+G\ %#Code\ LOC:\ %.%#,%+GAbout\ your\ application's\ environment,%+Grun\ %\\S%#::Application.routes,%+Eruby:%.%#(LoadError),%+EUsage:%.%#,%+ECould\ not\ find\ generator%.%#,%+EType\ 'rails'\ for\ help.,%D(in\ %f),%\\s%#from\ %f:%l:%m,%\\s%#from\ %f:%l:,%\\s%##\ %f:%l:%m,%\\s%##\ %f:%l,%\\s%#[%f:%l:\ %#%m,%\\s%#%f:%l:\ %#%m,%\\s%#%f:%l:,%m\ [%f:%l]:,%+Erake\ aborted!,%+EDon't\ know\ how\ to\ build\ task\ %.%#,%+Einvalid\ option:%.%#,%+Irake\ %\\S%\\+%\\s%\\+#\ %.%#,chdir\ /home/nicoer/RubymineProjects/newApp
+setlocal expandtab
+if &filetype != 'exproject'
+setlocal filetype=exproject
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=9999
+setlocal foldmarker={,}
+setlocal foldmethod=marker
+setlocal foldminlines=0
+setlocal foldnestmax=20
+setlocal foldtext=exproject#foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=bin/rake
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=.,~/RubymineProjects/newApp/lib,~/RubymineProjects/newApp/vendor,~/RubymineProjects/newApp/app/models/concerns,~/RubymineProjects/newApp/app/controllers/concerns,~/RubymineProjects/newApp/app/controllers,~/RubymineProjects/newApp/app/helpers,~/RubymineProjects/newApp/app/mailers,~/RubymineProjects/newApp/app/models,~/RubymineProjects/newApp/app/*,~/RubymineProjects/newApp/app/views,~/RubymineProjects/newApp/test,~/RubymineProjects/newApp/test/unit,~/RubymineProjects/newApp/test/functional,~/RubymineProjects/newApp/test/integration,~/RubymineProjects/newApp/test/controllers,~/RubymineProjects/newApp/test/helpers,~/RubymineProjects/newApp/test/mailers,~/RubymineProjects/newApp/test/models,~/RubymineProjects/newApp/vendor/plugins/*/lib,~/RubymineProjects/newApp/vendor/plugins/*/test,~/RubymineProjects/newApp/vendor/rails/*/lib,~/RubymineProjects/newApp/vendor/rails/*/test,~/RubymineProjects/newApp,/usr/include,
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal smartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.rb
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'exproject'
+setlocal syntax=exproject
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tags=~/RubymineProjects/newApp/tags,~/RubymineProjects/newApp/tmp/tags,./.exvim.newApp/tags
+setlocal termkey=
+setlocal termsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal nowrap
+setlocal wrapmargin=0
+3
+normal! zo
+4
+normal! zo
+5
+normal! zo
+78
+normal! zo
+145
+normal! zo
+206
+normal! zo
+241
+normal! zo
+242
+normal! zc
+255
+normal! zo
+256
+normal! zo
+257
+normal! zo
+258
+normal! zo
+259
+normal! zo
+259
+normal! zc
+255
+normal! zc
+let s:l = 101 - ((29 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+101
+normal! 010|
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :

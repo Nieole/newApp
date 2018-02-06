@@ -1,0 +1,175 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AccountActivationsController	./app/controllers/account_activations_controller.rb	/^class AccountActivationsController < ApplicationController$/;"	c
+AccountActivationsControllerTest	./test/controllers/account_activations_controller_test.rb	/^class AccountActivationsControllerTest < ActionDispatch::IntegrationTest$/;"	c
+AccountActivationsHelper	./app/helpers/account_activations_helper.rb	/^module AccountActivationsHelper$/;"	m
+ActionDispatch	./test/test_helper.rb	/^class ActionDispatch::IntegrationTest$/;"	c
+ActiveSupport	./test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddActivationToUsers	./db/migrate/20171227030522_add_activation_to_users.rb	/^class AddActivationToUsers < ActiveRecord::Migration[5.1]$/;"	c
+AddAdminToUsers	./db/migrate/20171223143507_add_admin_to_users.rb	/^class AddAdminToUsers < ActiveRecord::Migration[5.1]$/;"	c
+AddIndexToUsersEmail	./db/migrate/20171130091838_add_index_to_users_email.rb	/^class AddIndexToUsersEmail < ActiveRecord::Migration[5.1]$/;"	c
+AddPasswordDigestToUsers	./db/migrate/20171130093558_add_password_digest_to_users.rb	/^class AddPasswordDigestToUsers < ActiveRecord::Migration[5.1]$/;"	c
+AddPictureToMicroposts	./db/migrate/20180118060529_add_picture_to_microposts.rb	/^class AddPictureToMicroposts < ActiveRecord::Migration[5.1]$/;"	c
+AddRememberDigestToUsers	./db/migrate/20171215061956_add_remember_digest_to_users.rb	/^class AddRememberDigestToUsers < ActiveRecord::Migration[5.1]$/;"	c
+AddResetToUsers	./db/migrate/20180102072337_add_reset_to_users.rb	/^class AddResetToUsers < ActiveRecord::Migration[5.1]$/;"	c
+Application	./config/application.rb	/^  class Application < Rails::Application$/;"	c	class:NewApp
+ApplicationCable	./app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+ApplicationCable	./app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
+ApplicationController	./app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	./app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationHelperTest	./test/helpers/application_helper_test.rb	/^class ApplicationHelperTest < ActionView::TestCase$/;"	c
+ApplicationJob	./app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	./app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	./app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+ApplicationSystemTestCase	./test/application_system_test_case.rb	/^class ApplicationSystemTestCase < ActionDispatch::SystemTestCase$/;"	c
+Channel	./app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
+Connection	./app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
+CreateMicroposts	./db/migrate/20180111083056_create_microposts.rb	/^class CreateMicroposts < ActiveRecord::Migration[5.1]$/;"	c
+CreateRelationships	./db/migrate/20180119014448_create_relationships.rb	/^class CreateRelationships < ActiveRecord::Migration[5.1]$/;"	c
+CreateUsers	./db/migrate/20171129162647_create_users.rb	/^class CreateUsers < ActiveRecord::Migration[5.1]$/;"	c
+FollowingTest	./test/integration/following_test.rb	/^class FollowingTest < ActionDispatch::IntegrationTest$/;"	c
+GuestsCleanupJob	./app/jobs/guests_cleanup_job.rb	/^class GuestsCleanupJob < ApplicationJob$/;"	c
+GuestsCleanupJobTest	./test/jobs/guests_cleanup_job_test.rb	/^class GuestsCleanupJobTest < ActiveJob::TestCase$/;"	c
+Micropost	./app/models/micropost.rb	/^class Micropost < ApplicationRecord$/;"	c
+MicropostTest	./test/models/micropost_test.rb	/^class MicropostTest < ActiveSupport::TestCase$/;"	c
+MicropostsController	./app/controllers/microposts_controller.rb	/^class MicropostsController < ApplicationController$/;"	c
+MicropostsControllerTest	./test/controllers/microposts_controller_test.rb	/^class MicropostsControllerTest < ActionDispatch::IntegrationTest$/;"	c
+MicropostsHelper	./app/helpers/microposts_helper.rb	/^module MicropostsHelper$/;"	m
+MicropostsInterfaceTest	./test/integration/microposts_interface_test.rb	/^class MicropostsInterfaceTest < ActionDispatch::IntegrationTest$/;"	c
+MyWorker	./app/jobs/my_worker.rb	/^class MyWorker$/;"	c
+NewApp	./config/application.rb	/^module NewApp$/;"	m
+PasswordResetsController	./app/controllers/password_resets_controller.rb	/^class PasswordResetsController < ApplicationController$/;"	c
+PasswordResetsHelper	./app/helpers/password_resets_helper.rb	/^module PasswordResetsHelper$/;"	m
+PasswordResetsTest	./test/integration/password_resets_test.rb	/^class PasswordResetsTest < ActionDispatch::IntegrationTest$/;"	c
+PictureUploader	./app/uploaders/picture_uploader.rb	/^class PictureUploader < CarrierWave::Uploader::Base$/;"	c
+Relationship	./app/models/relationship.rb	/^class Relationship < ApplicationRecord$/;"	c
+RelationshipTest	./test/models/relationship_test.rb	/^class RelationshipTest < ActiveSupport::TestCase$/;"	c
+RelationshipsController	./app/controllers/relationships_controller.rb	/^class RelationshipsController < ApplicationController$/;"	c
+RelationshipsControllerTest	./test/controllers/relationships_controller_test.rb	/^class RelationshipsControllerTest < ActionDispatch::IntegrationTest$/;"	c
+RelationshipsHelper	./app/helpers/relationships_helper.rb	/^module RelationshipsHelper$/;"	m
+SessionsController	./app/controllers/sessions_controller.rb	/^class SessionsController < ApplicationController$/;"	c
+SessionsControllerTest	./test/controllers/sessions_controller_test.rb	/^class SessionsControllerTest < ActionDispatch::IntegrationTest$/;"	c
+SessionsHelper	./app/helpers/sessions_helper.rb	/^module SessionsHelper$/;"	m
+SessionsHelperTest	./test/helpers/sessions_helper_test.rb	/^class SessionsHelperTest < ActionView::TestCase$/;"	c
+SiteLayoutTest	./test/integration/site_layout_test.rb	/^class SiteLayoutTest < ActionDispatch::IntegrationTest$/;"	c
+StaticPagesController	./app/controllers/static_pages_controller.rb	/^class StaticPagesController < ApplicationController$/;"	c
+StaticPagesControllerTest	./test/controllers/static_pages_controller_test.rb	/^class StaticPagesControllerTest < ActionDispatch::IntegrationTest$/;"	c
+StaticPagesHelper	./app/helpers/static_pages_helper.rb	/^module StaticPagesHelper$/;"	m
+User	./app/models/user.rb	/^class User < ApplicationRecord$/;"	c
+UserMailer	./app/mailers/user_mailer.rb	/^class UserMailer < ApplicationMailer$/;"	c
+UserMailerPreview	./test/mailers/previews/user_mailer_preview.rb	/^class UserMailerPreview < ActionMailer::Preview$/;"	c
+UserMailerTest	./test/mailers/user_mailer_test.rb	/^class UserMailerTest < ActionMailer::TestCase$/;"	c
+UserTest	./test/models/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
+UsersController	./app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+UsersControllerTest	./test/controllers/users_controller_test.rb	/^class UsersControllerTest < ActionDispatch::IntegrationTest$/;"	c
+UsersEditTest	./test/integration/users_edit_test.rb	/^class UsersEditTest < ActionDispatch::IntegrationTest$/;"	c
+UsersHelper	./app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+UsersIndexTest	./test/integration/users_index_test.rb	/^class UsersIndexTest < ActionDispatch::IntegrationTest$/;"	c
+UsersLoginTest	./test/integration/users_login_test.rb	/^class UsersLoginTest < ActionDispatch::IntegrationTest$/;"	c
+UsersProfileTest	./test/integration/users_profile_test.rb	/^class UsersProfileTest < ActionDispatch::IntegrationTest$/;"	c
+UsersSignupTest	./test/integration/users_signup_test.rb	/^class UsersSignupTest < ActionDispatch::IntegrationTest$/;"	c
+about	./app/controllers/static_pages_controller.rb	/^  def about$/;"	f	class:StaticPagesController
+account_activation	./app/mailers/user_mailer.rb	/^  def account_activation user$/;"	f	class:UserMailer
+account_activation	./test/mailers/previews/user_mailer_preview.rb	/^  def account_activation$/;"	f	class:UserMailerPreview
+activate	./app/models/user.rb	/^	def activate$/;"	f
+admin_user	./app/controllers/users_controller.rb	/^  def admin_user$/;"	f	class:UsersController
+authenticated?	./app/models/user.rb	/^	def authenticated? attribute,token$/;"	f
+change	./db/migrate/20171129162647_create_users.rb	/^  def change$/;"	f	class:CreateUsers
+change	./db/migrate/20171130091838_add_index_to_users_email.rb	/^  def change$/;"	f	class:AddIndexToUsersEmail
+change	./db/migrate/20171130093558_add_password_digest_to_users.rb	/^  def change$/;"	f	class:AddPasswordDigestToUsers
+change	./db/migrate/20171215061956_add_remember_digest_to_users.rb	/^  def change$/;"	f	class:AddRememberDigestToUsers
+change	./db/migrate/20171223143507_add_admin_to_users.rb	/^  def change$/;"	f	class:AddAdminToUsers
+change	./db/migrate/20171227030522_add_activation_to_users.rb	/^  def change$/;"	f	class:AddActivationToUsers
+change	./db/migrate/20180102072337_add_reset_to_users.rb	/^  def change$/;"	f	class:AddResetToUsers
+change	./db/migrate/20180111083056_create_microposts.rb	/^  def change$/;"	f	class:CreateMicroposts
+change	./db/migrate/20180118060529_add_picture_to_microposts.rb	/^  def change$/;"	f	class:AddPictureToMicroposts
+change	./db/migrate/20180119014448_create_relationships.rb	/^  def change$/;"	f	class:CreateRelationships
+check_expiration	./app/controllers/password_resets_controller.rb	/^  def check_expiration$/;"	f	class:PasswordResetsController
+contact	./app/controllers/static_pages_controller.rb	/^  def contact$/;"	f	class:StaticPagesController
+correct_user	./app/controllers/microposts_controller.rb	/^  def correct_user$/;"	f	class:MicropostsController
+correct_user	./app/controllers/users_controller.rb	/^  def correct_user$/;"	f	class:UsersController
+create	./app/controllers/microposts_controller.rb	/^  def create$/;"	f	class:MicropostsController
+create	./app/controllers/password_resets_controller.rb	/^  def create$/;"	f	class:PasswordResetsController
+create	./app/controllers/relationships_controller.rb	/^  def create$/;"	f	class:RelationshipsController
+create	./app/controllers/sessions_controller.rb	/^  def create$/;"	f	class:SessionsController
+create	./app/controllers/users_controller.rb	/^  def create$/;"	f	class:UsersController
+create_activation_digest	./app/models/user.rb	/^  def create_activation_digest$/;"	f
+create_reset_digest	./app/models/user.rb	/^	def create_reset_digest$/;"	f
+current_user	./app/helpers/sessions_helper.rb	/^  def current_user$/;"	f	class:SessionsHelper
+current_user?	./app/helpers/sessions_helper.rb	/^  def current_user? user$/;"	f	class:SessionsHelper
+destroy	./app/controllers/microposts_controller.rb	/^  def destroy$/;"	f	class:MicropostsController
+destroy	./app/controllers/relationships_controller.rb	/^  def destroy$/;"	f	class:RelationshipsController
+destroy	./app/controllers/sessions_controller.rb	/^  def destroy$/;"	f	class:SessionsController
+destroy	./app/controllers/users_controller.rb	/^  def destroy$/;"	f	class:UsersController
+digest	./app/models/user.rb	/^		def digest string$/;"	f	class:User
+downcase_email	./app/models/user.rb	/^  def downcase_email$/;"	f
+edit	./app/controllers/account_activations_controller.rb	/^  def edit$/;"	f	class:AccountActivationsController
+edit	./app/controllers/password_resets_controller.rb	/^  def edit$/;"	f	class:PasswordResetsController
+edit	./app/controllers/users_controller.rb	/^  def edit$/;"	f	class:UsersController
+extension_whitelist	./app/uploaders/picture_uploader.rb	/^  def extension_whitelist$/;"	f	class:PictureUploader
+feed	./app/models/user.rb	/^	def feed$/;"	f
+follow	./app/models/user.rb	/^	def follow other_user$/;"	f
+followers	./app/controllers/users_controller.rb	/^  def followers$/;"	f	class:UsersController
+following	./app/controllers/users_controller.rb	/^  def following$/;"	f	class:UsersController
+following?	./app/models/user.rb	/^	def following? other_user$/;"	f
+forget	./app/helpers/sessions_helper.rb	/^  def forget user$/;"	f	class:SessionsHelper
+forget	./app/models/user.rb	/^	def forget$/;"	f
+full_title	./app/helpers/application_helper.rb	/^	def full_title page_title = ''$/;"	f	class:ApplicationHelper
+get_user	./app/controllers/password_resets_controller.rb	/^  def get_user$/;"	f	class:PasswordResetsController
+gravatar_for	./app/helpers/users_helper.rb	/^	def gravatar_for user,size:80$/;"	f	class:UsersHelper
+hello	./app/controllers/application_controller.rb	/^  def hello$/;"	f	class:ApplicationController
+help	./app/controllers/static_pages_controller.rb	/^  def help$/;"	f	class:StaticPagesController
+home	./app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
+index	./app/controllers/users_controller.rb	/^  def index$/;"	f	class:UsersController
+is_logged_in?	./test/test_helper.rb	/^  def is_logged_in?$/;"	f	class:ActiveSupport
+log_in	./app/helpers/sessions_helper.rb	/^  def log_in user$/;"	f	class:SessionsHelper
+log_in_as	./test/test_helper.rb	/^  def log_in_as user$/;"	f	class:ActiveSupport
+log_in_as	./test/test_helper.rb	/^  def log_in_as(user, password: 'password', remember_me: '1')$/;"	f	class:ActionDispatch
+log_out	./app/helpers/sessions_helper.rb	/^  def log_out$/;"	f	class:SessionsHelper
+logged_in?	./app/helpers/sessions_helper.rb	/^  def logged_in?$/;"	f	class:SessionsHelper
+logged_in_user	./app/controllers/application_controller.rb	/^  def logged_in_user$/;"	f	class:ApplicationController
+micropost_params	./app/controllers/microposts_controller.rb	/^  def micropost_params$/;"	f	class:MicropostsController
+new	./app/controllers/password_resets_controller.rb	/^  def new$/;"	f	class:PasswordResetsController
+new	./app/controllers/sessions_controller.rb	/^  def new$/;"	f	class:SessionsController
+new	./app/controllers/users_controller.rb	/^  def new$/;"	f	class:UsersController
+new_token	./app/models/user.rb	/^		def new_token$/;"	f	class:User
+password_reset	./app/mailers/user_mailer.rb	/^  def password_reset user$/;"	f	class:UserMailer
+password_reset	./test/mailers/previews/user_mailer_preview.rb	/^  def password_reset$/;"	f	class:UserMailerPreview
+password_reset_expired?	./app/models/user.rb	/^	def password_reset_expired?$/;"	f
+perform	./app/jobs/guests_cleanup_job.rb	/^  def perform(*args)$/;"	f	class:GuestsCleanupJob
+perform	./app/jobs/my_worker.rb	/^  def perform$/;"	f	class:MyWorker
+picture_size	./app/models/micropost.rb	/^  def picture_size$/;"	f	class:Micropost
+redirect_back_or	./app/helpers/sessions_helper.rb	/^  def redirect_back_or default$/;"	f	class:SessionsHelper
+remember	./app/helpers/sessions_helper.rb	/^  def remember user$/;"	f	class:SessionsHelper
+remember	./app/models/user.rb	/^	def remember$/;"	f
+send_activation_email	./app/models/user.rb	/^	def send_activation_email$/;"	f
+send_password_reset_email	./app/models/user.rb	/^	def send_password_reset_email$/;"	f
+setup	./test/controllers/microposts_controller_test.rb	/^  def setup$/;"	f	class:MicropostsControllerTest
+setup	./test/controllers/static_pages_controller_test.rb	/^	def setup$/;"	f	class:StaticPagesControllerTest
+setup	./test/controllers/users_controller_test.rb	/^  def setup$/;"	f	class:UsersControllerTest
+setup	./test/helpers/sessions_helper_test.rb	/^  def setup$/;"	f	class:SessionsHelperTest
+setup	./test/integration/following_test.rb	/^  def setup$/;"	f	class:FollowingTest
+setup	./test/integration/microposts_interface_test.rb	/^  def setup$/;"	f	class:MicropostsInterfaceTest
+setup	./test/integration/password_resets_test.rb	/^  def setup$/;"	f	class:PasswordResetsTest
+setup	./test/integration/users_edit_test.rb	/^  def setup$/;"	f	class:UsersEditTest
+setup	./test/integration/users_index_test.rb	/^  def setup$/;"	f	class:UsersIndexTest
+setup	./test/integration/users_login_test.rb	/^  def setup$/;"	f	class:UsersLoginTest
+setup	./test/integration/users_signup_test.rb	/^  def setup$/;"	f	class:UsersSignupTest
+setup	./test/models/micropost_test.rb	/^  def setup$/;"	f	class:MicropostTest
+setup	./test/models/relationship_test.rb	/^  def setup$/;"	f	class:RelationshipTest
+setup	./test/models/user_test.rb	/^  def setup$/;"	f	class:UserTest
+show	./app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
+store_dir	./app/uploaders/picture_uploader.rb	/^  def store_dir$/;"	f	class:PictureUploader
+store_location	./app/helpers/sessions_helper.rb	/^  def store_location$/;"	f	class:SessionsHelper
+system!	./bin/setup	/^def system!(*args)$/;"	f
+system!	./bin/update	/^def system!(*args)$/;"	f
+unfollow	./app/models/user.rb	/^	def unfollow other_user$/;"	f
+update	./app/controllers/password_resets_controller.rb	/^  def update$/;"	f	class:PasswordResetsController
+update	./app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
+user_params	./app/controllers/password_resets_controller.rb	/^  def user_params$/;"	f	class:PasswordResetsController
+user_params	./app/controllers/users_controller.rb	/^  def user_params$/;"	f	class:UsersController
+valid_user	./app/controllers/password_resets_controller.rb	/^  def valid_user$/;"	f	class:PasswordResetsController
