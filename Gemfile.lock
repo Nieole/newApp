@@ -96,7 +96,7 @@ GEM
     erubi (1.9.0)
     et-orbi (1.0.9)
       tzinfo
-    excon (0.67.0)
+    excon (0.83.0)
     execjs (2.7.0)
     faker (1.7.3)
       i18n (~> 0.5)
